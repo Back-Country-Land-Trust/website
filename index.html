@@ -10,8 +10,17 @@
   <title>Back Country Land Trust | Alpine, California</title>
   <link rel="stylesheet" href="assets/css/site.css">
   <script src="assets/js/site.js" defer></script>
+  <style>
+    .hero .eyebrow { color:var(--paper);height:auto; }
+    .homepage-mission { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .homepage-mission .panel-sky { grid-column:auto; }
+    .homepage-callout { grid-template-columns:minmax(0,1fr); }
+    .homepage-footer { grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr)); }
+    .footer-grid address a { overflow-wrap:anywhere; }
+    @media (max-width:640px) { .homepage-mission { grid-template-columns:minmax(0,1fr); } }
+  </style>
 </head>
-<body>
+<body id="top">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="site-header">
@@ -60,7 +69,8 @@
       </div>
     </section>
 
-    <section class="section event-band" aria-labelledby="event-heading">
+    <!-- Pending approved event listing
+<section class="section event-band" aria-labelledby="event-heading">
       <div class="container">
         <p class="eyebrow">Community connection</p>
         <h2 id="event-heading">Join us at our next event</h2>
@@ -70,8 +80,10 @@
         </article>
       </div>
     </section>
+-->
 
-    <section class="section impact-section" aria-labelledby="impact-heading">
+    <!-- Unverified impact figures retained for approval
+<section class="section impact-section" aria-labelledby="impact-heading">
       <div class="container">
         <h2 id="impact-heading" class="sr-only">Our impact</h2>
         <div class="impact-grid">
@@ -83,27 +95,29 @@
         <p class="fine-print">Verify and update these public impact figures before launch.</p>
       </div>
     </section>
+-->
 
-    <section class="section mission-grid" aria-label="Learn more">
+    <section class="section mission-grid homepage-mission" aria-label="Learn more">
       <article class="panel panel-dark"><p class="eyebrow">Our conservation mission</p><h2>Protecting the places that connect us.</h2><p>We work to preserve open space, protect and restore habitat, and create opportunities for people to learn from the land.</p><a class="text-link" href="about/">Learn more <span aria-hidden="true">→</span></a></article>
-      <div class="photo-placeholder photo-roadrunner" role="img" aria-label="Placeholder for an approved Back Country Land Trust wildlife photograph"></div>
+      <!-- Pending approved photograph: <div class="photo-placeholder photo-roadrunner" role="img" aria-label="Placeholder for an approved Back Country Land Trust wildlife photograph"></div> -->
       <article class="panel panel-sky"><p class="eyebrow">Upcoming projects</p><h2>Stewardship in action.</h2><p>Discover restoration projects, trail work, and ways to support a healthy local landscape.</p><a class="text-link" href="get-involved/">Support us <span aria-hidden="true">→</span></a></article>
     </section>
 
-    <section class="section split-callout">
-      <div class="photo-placeholder photo-field" role="img" aria-label="Placeholder for an approved Wright's Field photograph"></div>
+    <section class="section split-callout homepage-callout">
+      <!-- Pending approved photograph: <div class="photo-placeholder photo-field" role="img" aria-label="Placeholder for an approved Wright's Field photograph"></div> -->
       <article class="panel panel-evergreen"><p class="eyebrow">Join our efforts</p><h2>Small actions create lasting impact.</h2><p>Volunteer, attend an event, share a field observation, or support conservation work.</p><a class="button button-outline-light" href="get-involved/">Act now</a></article>
     </section>
   </main>
 
   <footer class="site-footer">
-    <section class="newsletter"><div class="container"><h2>Join the movement</h2><p>Get the latest news and updates.</p><a class="button button-dark" href="contact/">Newsletter sign-up</a></div></section>
-    <div class="container footer-grid">
-      <div><h2>Contact us</h2><p>Questions about Wright's Field, events, or stewardship? We would be glad to hear from you.</p><a class="text-link" href="contact/">Open contact form <span aria-hidden="true">→</span></a></div>
+    <!-- Pending newsletter signup destination: <section class="newsletter"><div class="container"><h2>Join the movement</h2><p>Get the latest news and updates.</p><a class="button button-dark" href="contact/">Newsletter sign-up</a></div></section> -->
+    <div class="container footer-grid homepage-footer">
+      <div><h2>Contact us</h2><p>Questions about Wright's Field, events, or stewardship? We would be glad to hear from you.</p><a class="text-link" href="mailto:backcountrylandtrust@gmail.com">Email us <span aria-hidden="true">→</span></a></div>
       <address><strong>Email</strong><a href="mailto:backcountrylandtrust@gmail.com">backcountrylandtrust@gmail.com</a><strong>Mailing address</strong><span>P.O. Box 1148<br>Alpine, CA 91903</span><strong>Phone</strong><a href="tel:+16195666971">619-566-6971</a></address>
-      <div><strong>Follow</strong><p>Social links will be added after they are confirmed.</p></div>
+      <!-- Pending official social accounts: <div><strong>Follow</strong><p>Social links will be added after they are confirmed.</p></div> -->
     </div>
     <div class="container footer-bottom"><span>© <span id="year"></span> Back Country Land Trust. All rights reserved.</span><a href="#top">Back to top</a></div>
   </footer>
 </body>
 </html>
+

@@ -134,3 +134,23 @@ h3 { font-size: clamp(1.4rem, 2.8vw, 2.2rem); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+/* Official BCLT header logo. The home-link aria-label remains its accessible name. */
+.site-header .brand {
+  display: block;
+  flex: 0 0 auto;
+  width: 225px;
+  height: 72px;
+  background: url("../images/bclt-logo-header.jpg") center / contain no-repeat;
+}
+.site-header .brand > span { display: none; }
+@media (max-width: 1100px) {
+  .menu-toggle { display: block; }
+  .site-nav { position: absolute; top: 100%; right: 0; left: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 1rem 1.25rem 1.4rem; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: var(--shadow); }
+  .site-nav.is-open { display: flex; }
+  .site-nav > a:not(.button) { padding: .75rem 0; font-size: 1rem; }
+  .site-nav .button { margin-top: .5rem; }
+}
+@media (max-width: 640px) {
+  .site-header .brand { width: min(210px, calc(100vw - 6rem)); height: 67px; }
+}

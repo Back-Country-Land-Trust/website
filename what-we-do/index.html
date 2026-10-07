@@ -7,6 +7,15 @@
   <title>What We Do | Back Country Land Trust</title>
   <link rel="stylesheet" href="../assets/css/site.css">
   <script src="../assets/js/site.js" defer></script>
+  <style>
+    .hero .eyebrow { color:var(--paper);height:auto; }
+    .program-page-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:clamp(1.5rem,5vw,5rem); }
+    .program-page-panels { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .program-page-panels .panel-sky { grid-column:auto; }
+    .program-page-footer { grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr)); }
+    .footer-grid address a { overflow-wrap:anywhere; }
+    @media (max-width:640px) { .program-page-panels { grid-template-columns:minmax(0,1fr); } }
+  </style>
 </head>
 <body id="top">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -31,8 +40,8 @@
 
     <section class="section">
       <div class="container">
-        <div class="section-heading"><div><p class="eyebrow">Programs and projects</p><h2>Care for land.<br>Build community.</h2></div><p>These program areas mirror the existing site while focusing the language on work that can be carried out locally and updated easily by future land managers.</p></div>
-        <div class="impact-grid" style="grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,5vw,5rem)">
+        <div class="section-heading"><div><p class="eyebrow">Programs and projects</p><h2>Care for land.<br>Build community.</h2></div><!-- Internal program editor note: <p>These program areas mirror the existing site while focusing the language on work that can be carried out locally and updated easily by future land managers.</p> --></div>
+        <div class="program-page-grid">
           <article><h3 style="color:var(--evergreen)">Community<br>conservation</h3><p>We invite neighbors, volunteers, partners, and supporters to participate in the protection and preservation of local natural habitats and wildlife.</p><a class="text-link" href="../get-involved/">Get involved <span aria-hidden="true">→</span></a></article>
           <article><h3 style="color:var(--evergreen)">Early<br>education</h3><p>Outdoor learning, guided experiences, and age-appropriate conservation activities help young people build a lasting connection with the natural world.</p><a class="text-link" href="../events/">View events <span aria-hidden="true">→</span></a></article>
           <article><h3 style="color:var(--evergreen)">Habitat<br>restoration</h3><p>Stewardship projects can strengthen native habitat, support biodiversity, and improve the resilience of the landscape over time.</p><a class="text-link" href="../contact/">Ask about stewardship <span aria-hidden="true">→</span></a></article>
@@ -40,21 +49,23 @@
       </div>
     </section>
 
-    <section class="mission-grid" aria-label="Programs in practice">
+    <section class="mission-grid program-page-panels" aria-label="Programs in practice">
       <article class="panel panel-dark"><p class="eyebrow">Field stewardship</p><h2>Work directly on the land.</h2><p>Trail maintenance, cleanup days, invasive-plant work, and habitat care are practical ways to support Wright's Field and surrounding open space.</p><a class="button button-outline-light" href="../get-involved/">Volunteer</a></article>
-      <div class="photo-placeholder photo-field" role="img" aria-label="Placeholder for an approved photograph of field stewardship"></div>
-      <article class="panel panel-sky"><p class="eyebrow">Public connection</p><h2>Learn outside.</h2><p>Use this area for guided hikes, field classes, community programs, and other public opportunities.</p><a class="text-link" href="../events/">Find an event <span aria-hidden="true">→</span></a></article>
+      <!-- Pending approved photograph: <div class="photo-placeholder photo-field" role="img" aria-label="Placeholder for an approved photograph of field stewardship"></div> -->
+      <article class="panel panel-sky"><p class="eyebrow">Public connection</p><h2>Learn outside.</h2><!-- Pending approved public program copy: <p>Use this area for guided hikes, field classes, community programs, and other public opportunities.</p> --><a class="text-link" href="../events/">Find an event <span aria-hidden="true">→</span></a></article>
     </section>
 
     <section class="section event-band">
-      <div class="container"><p class="eyebrow">Support the work</p><h2>Every contribution helps.</h2><p style="max-width:45rem">Donations and volunteer time help sustain conservation, restoration, and education programs. Link this section to the organization's approved donation platform before launch.</p><p><a class="button button-outline-light" href="../donate/">Support conservation</a></p></div>
+      <div class="container"><p class="eyebrow">Support the work</p><h2>Every contribution helps.</h2><!-- Original donation editor copy: <p style="max-width:45rem">Donations and volunteer time help sustain conservation, restoration, and education programs. Link this section to the organization's approved donation platform before launch.</p> -->
+      <p style="max-width:45rem">Donations and volunteer time help sustain conservation, restoration, and education programs.</p><p><a class="button button-outline-light" href="../donate/">Support conservation</a></p></div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <section class="newsletter"><div class="container"><h2>Join the movement</h2><p>Get the latest news and updates.</p><a class="button button-dark" href="../contact/">Newsletter sign-up</a></div></section>
-    <div class="container footer-grid"><div><h2>Contact us</h2><p>Questions about Wright's Field, events, or stewardship? We would be glad to hear from you.</p><a class="text-link" href="../contact/">Open contact form <span aria-hidden="true">→</span></a></div><address><strong>Email</strong><a href="mailto:backcountrylandtrust@gmail.com">backcountrylandtrust@gmail.com</a><strong>Mailing address</strong><span>P.O. Box 1148<br>Alpine, CA 91903</span><strong>Phone</strong><a href="tel:+16195666971">619-566-6971</a></address><div><strong>Follow</strong><p>Social links will be added after they are confirmed.</p></div></div>
+    <!-- Pending newsletter signup destination: <section class="newsletter"><div class="container"><h2>Join the movement</h2><p>Get the latest news and updates.</p><a class="button button-dark" href="../contact/">Newsletter sign-up</a></div></section> -->
+    <div class="container footer-grid program-page-footer"><div><h2>Contact us</h2><p>Questions about Wright's Field, events, or stewardship? We would be glad to hear from you.</p><a class="text-link" href="mailto:backcountrylandtrust@gmail.com">Email us <span aria-hidden="true">→</span></a></div><address><strong>Email</strong><a href="mailto:backcountrylandtrust@gmail.com">backcountrylandtrust@gmail.com</a><strong>Mailing address</strong><span>P.O. Box 1148<br>Alpine, CA 91903</span><strong>Phone</strong><a href="tel:+16195666971">619-566-6971</a></address><!-- Pending official social accounts: <div><strong>Follow</strong><p>Social links will be added after they are confirmed.</p></div> --></div>
     <div class="container footer-bottom"><span>© <span id="year"></span> Back Country Land Trust. All rights reserved.</span><a href="#top">Back to top</a></div>
   </footer>
 </body>
 </html>
+

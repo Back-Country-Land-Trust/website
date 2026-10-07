@@ -1,6 +1,18 @@
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.site-nav');
 
+if (navigation && !navigation.querySelector('a[href="https://bcltme.com"]')) {
+  const mountainEmpireLink = document.createElement('a');
+  mountainEmpireLink.href = 'https://bcltme.com';
+  mountainEmpireLink.textContent = 'Mountain Empire';
+  const donateLink = Array.from(navigation.querySelectorAll('a')).find((link) => new URL(link.href).pathname.replace(/\/$/, '') === '/donate');
+  if (donateLink && donateLink.parentElement === navigation) {
+    navigation.insertBefore(mountainEmpireLink, donateLink);
+  } else {
+    navigation.appendChild(mountainEmpireLink);
+  }
+}
+
 if (menuButton && navigation) {
   menuButton.addEventListener('click', () => {
     const open = menuButton.getAttribute('aria-expanded') === 'true';
@@ -37,7 +49,7 @@ const WEATHER_CODE = {
   53: 'Drizzle',
   55: 'Heavy drizzle',
   56: 'Freezing drizzle',
-  57: 'Heavy freezing drizzle',
+  57: 'Freezing drizzle',
   61: 'Light rain',
   63: 'Rain',
   65: 'Heavy rain',
@@ -127,3 +139,4 @@ async function loadWeather() {
 }
 
 loadWeather();
+

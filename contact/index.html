@@ -7,6 +7,13 @@
   <title>Contact | Back Country Land Trust</title>
   <link rel="stylesheet" href="../assets/css/site.css">
   <script src="../assets/js/site.js" defer></script>
+  <style>
+    .hero .eyebrow { color:var(--paper);height:auto; }
+    .contact-page-layout { display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(2rem,8vw,8rem); }
+    .contact-page-footer { grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr)); }
+    address a { overflow-wrap:anywhere; }
+    @media (max-width:640px) { .contact-page-layout { grid-template-columns:minmax(0,1fr); } }
+  </style>
 </head>
 <body id="top">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -30,12 +37,13 @@
     </section>
 
     <section class="section">
-      <div class="container" style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(2rem,8vw,8rem)">
+      <div class="container contact-page-layout">
         <div>
           <p class="eyebrow">Send a message</p><h2>How can we help?</h2>
-          <p>Use the contact form to send a message to Back Country Land Trust. It opens a Google Form in a new tab, which makes submissions easy to manage from the organization’s Google account.</p>
-          <p><a class="button button-dark" href="https://forms.gle/REPLACE-WITH-CONTACT-FORM" target="_blank" rel="noopener">Open contact form</a></p>
-          <p class="fine-print">Replace <code>https://forms.gle/REPLACE-WITH-CONTACT-FORM</code> with the published Google Form URL. Suggested fields: name, email address, phone number optional, topic, message, and permission to reply.</p>
+          <!-- Pending approved contact form: <p>Use the contact form to send a message to Back Country Land Trust. It opens a Google Form in a new tab, which makes submissions easy to manage from the organization’s Google account.</p> -->
+          <p>Email Back Country Land Trust with your questions or message.</p>
+          <p><a class="button button-dark" href="mailto:backcountrylandtrust@gmail.com">Email us</a></p>
+          <!-- Contact form editor instructions: <p class="fine-print">Replace <code>https://forms.gle/REPLACE-WITH-CONTACT-FORM</code> with the published Google Form URL. Suggested fields: name, email address, phone number optional, topic, message, and permission to reply.</p> -->
           <div style="margin-top:3rem;padding:1.5rem;border-left:.45rem solid var(--sage);background:var(--mist)"><h3>Accessibility or event questions</h3><p>If you have a question about access needs, trail conditions, terrain, parking, or an upcoming program, please contact the Trust as early as possible so staff and volunteers can respond.</p></div>
         </div>
         <address style="display:grid;align-content:start;gap:.7rem;padding:clamp(1.5rem,4vw,3rem);background:var(--evergreen);color:var(--paper);font-style:normal">
@@ -44,7 +52,7 @@
           <strong>Email</strong><a href="mailto:backcountrylandtrust@gmail.com">backcountrylandtrust@gmail.com</a>
           <strong>Mailing address</strong><span>P.O. Box 1148<br>Alpine, CA 91903</span>
           <strong>Phone</strong><a href="tel:+16195666971">619-566-6971</a>
-          <p style="margin-top:1rem">Verify these details before launch. Add confirmed Facebook and Instagram links here when available.</p>
+          <!-- Internal editor note: <p style="margin-top:1rem">Verify these details before launch. Add confirmed Facebook and Instagram links here when available.</p> -->
         </address>
       </div>
     </section>
@@ -55,9 +63,10 @@
   </main>
 
   <footer class="site-footer">
-    <section class="newsletter"><div class="container"><h2>Join the movement</h2><p>Get the latest news and updates.</p><a class="button button-dark" href="https://forms.gle/REPLACE-WITH-NEWSLETTER-FORM" target="_blank" rel="noopener">Newsletter sign-up</a></div></section>
-    <div class="container footer-grid"><div><h2>Contact us</h2><p>Questions about Wright's Field, events, or stewardship? We would be glad to hear from you.</p><a class="text-link" href="https://forms.gle/REPLACE-WITH-CONTACT-FORM" target="_blank" rel="noopener">Open contact form <span aria-hidden="true">→</span></a></div><address><strong>Email</strong><a href="mailto:backcountrylandtrust@gmail.com">backcountrylandtrust@gmail.com</a><strong>Mailing address</strong><span>P.O. Box 1148<br>Alpine, CA 91903</span><strong>Phone</strong><a href="tel:+16195666971">619-566-6971</a></address><div><strong>Follow</strong><p>Social links will be added after they are confirmed.</p></div></div>
+    <!-- Pending newsletter signup destination: <section class="newsletter"><div class="container"><h2>Join the movement</h2><p>Get the latest news and updates.</p><a class="button button-dark" href="https://forms.gle/REPLACE-WITH-NEWSLETTER-FORM" target="_blank" rel="noopener">Newsletter sign-up</a></div></section> -->
+    <div class="container footer-grid contact-page-footer"><div><h2>Contact us</h2><p>Questions about Wright's Field, events, or stewardship? We would be glad to hear from you.</p><a class="text-link" href="mailto:backcountrylandtrust@gmail.com">Email us <span aria-hidden="true">→</span></a></div><address><strong>Email</strong><a href="mailto:backcountrylandtrust@gmail.com">backcountrylandtrust@gmail.com</a><strong>Mailing address</strong><span>P.O. Box 1148<br>Alpine, CA 91903</span><strong>Phone</strong><a href="tel:+16195666971">619-566-6971</a></address><!-- Pending official social accounts: <div><strong>Follow</strong><p>Social links will be added after they are confirmed.</p></div> --></div>
     <div class="container footer-bottom"><span>© <span id="year"></span> Back Country Land Trust. All rights reserved.</span><a href="#top">Back to top</a></div>
   </footer>
 </body>
 </html>
+

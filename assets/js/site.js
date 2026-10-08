@@ -73,6 +73,35 @@ function conditionFor(code) {
   return WEATHER_CODE[code] || 'Conditions unavailable';
 }
 
+function weatherIcon(code, size = 40, isDay = true) {
+  const sun = '<g stroke="#bd7900" fill="#ffd36a"><circle cx="16" cy="16" r="7"/><path fill="none" d="M16 3v3m0 20v3M3 16h3m20 0h3M7 7l2 2m14 14 2 2M7 25l2-2M23 9l2-2"/></g>';
+  const moon = '<path d="M24 6a12 12 0 1 0 2 20A13 13 0 0 1 24 6Z" fill="#dce8f4" stroke="#64798b"/>';
+  const cloud = '<path d="M10 30a7 7 0 0 1-1-14 10 10 0 0 1 19-1 7.5 7.5 0 1 1 2 15Z" fill="#e5edf1" stroke="#637b85"/>';
+  const rain = '<path d="m13 34-2 5m11-5-2 5m11-5-2 5" stroke="#287bb5"/>';
+  const snow = '<g stroke="#287bb5"><path d="M15 33v8m-4-4h8m-7-3 6 6m0-6-6 6M29 33v8m-4-4h8m-7-3 6 6m0-6-6 6"/></g>';
+  let graphic;
+  if (code === 0) {
+    graphic = isDay ? '<g transform="translate(8 8)">' + sun + '</g>' : moon;
+  } else if (code === 1 || code === 2) {
+    graphic = (isDay ? sun : moon) + cloud;
+  } else if (code === 3) {
+    graphic = cloud;
+  } else if (code === 45 || code === 48) {
+    graphic = cloud + '<path d="M7 35h30M11 40h22" stroke="#637b85"/>';
+  } else if ([56, 57, 66, 67].includes(code)) {
+    graphic = cloud + rain + '<path d="M39 34v8m-4-4h8" stroke="#287bb5"/>';
+  } else if ([51, 53, 55, 61, 63, 65, 80, 81, 82].includes(code)) {
+    graphic = cloud + rain;
+  } else if ([71, 73, 75, 77, 85, 86].includes(code)) {
+    graphic = cloud + snow;
+  } else if ([95, 96, 99].includes(code)) {
+    graphic = cloud + '<path d="m25 30-7 9h6l-3 7 12-13h-7l3-3Z" fill="#ffd36a" stroke="#bd7900"/>';
+  } else {
+    graphic = '<circle cx="24" cy="24" r="16" fill="#e5edf1" stroke="#637b85"/><path d="M19 18a5 5 0 0 1 10 0c0 4-5 4-5 8m0 5h.01" stroke="#637b85"/>';
+  }
+  return `<svg class="weather-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="${size}" height="${size}" aria-hidden="true" focusable="false" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;flex-shrink:0;margin:0.35rem 0">${graphic}</svg>`;
+}
+
 function formatDay(dateString) {
   return new Intl.DateTimeFormat('en-US', {
     weekday: 'short',
@@ -92,7 +121,7 @@ async function loadWeather() {
   endpoint.search = new URLSearchParams({
     latitude,
     longitude,
-    current: 'temperature_2m,apparent_temperature,weather_code,wind_speed_10m,precipitation',
+    current: 'temperature_2m,apparent_temperature,weather_code,wind_speed_10m,precipitation,is_day',
     daily: 'weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max',
     temperature_unit: 'fahrenheit',
     wind_speed_unit: 'mph',
@@ -110,6 +139,7 @@ async function loadWeather() {
     currentWeather.innerHTML = `
       <div>
         <p class="eyebrow">Alpine, California</p>
+        ${weatherIcon(current.weather_code, 64, current.is_day !== 0)}
         <h3>${conditionFor(current.weather_code)}</h3>
         <span>Feels like ${Math.round(current.apparent_temperature)}°F · Wind ${Math.round(current.wind_speed_10m)} mph</span>
       </div>
@@ -119,6 +149,7 @@ async function loadWeather() {
     forecast.innerHTML = daily.time.map((date, index) => `
       <article class="forecast-day">
         <span>${formatDay(date)}</span>
+        ${weatherIcon(daily.weather_code[index])}
         <strong>${Math.round(daily.temperature_2m_max[index])}° / ${Math.round(daily.temperature_2m_min[index])}°</strong>
         <span class="forecast-condition">${conditionFor(daily.weather_code[index])}</span>
         <span>${daily.precipitation_probability_max[index] ?? 0}% chance of rain</span>
@@ -139,4 +170,5 @@ async function loadWeather() {
 }
 
 loadWeather();
+
 
